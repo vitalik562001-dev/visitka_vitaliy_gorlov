@@ -301,6 +301,20 @@ section { padding-block: clamp(48px, 8vw, 88px); border-top: 1px solid var(--lin
 /* плейсхолдер, который владелец должен заменить */
 .todo { font-family: var(--f-mono); font-size: .88em; color: var(--gold-ink); }
 
+/* подзаголовок под именем — текстовой гарнитурой, в отличие от заголовка */
+.subtitle {
+  margin: 0;
+  font-family: var(--f-body); font-weight: 500;
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  letter-spacing: .04em; text-transform: uppercase;
+  color: var(--gold-ink);
+}
+.sec-head .subtitle { color: var(--gold-ink); }
+.about { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: start; }
+.about-photo { display: block; width: 100%; height: auto; border-radius: 4px; }
+.more { font-family: var(--f-mono); font-size: .9rem; letter-spacing: .04em; text-transform: uppercase; color: var(--gold-ink); text-underline-offset: 4px; }
+.more::after { content: " →"; }
+
 .prose { max-width: 62ch; display: grid; gap: 14px; font-size: var(--s-3); }
 .prose p { margin: 0; }
 
@@ -351,6 +365,7 @@ footer {
   .process { grid-template-columns: 1fr 1fr; }
   .links { grid-template-columns: 1fr; }
   .reviews { grid-template-columns: 1fr; }
+  .about { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
   .track { grid-template-columns: 1fr; gap: 6px; }
