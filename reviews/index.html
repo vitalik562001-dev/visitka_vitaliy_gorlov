@@ -27,22 +27,49 @@
   <div class="page-head">
     <span class="label">Отзывы</span>
     <h1>Что говорят клиенты</h1>
+    <p class="lead">Видеоотзывы людей, с которыми я работал. Листайте влево и вправо.</p>
   </div>
 
   <div class="page-body">
-    <div class="reviews">
-      <figure class="review">
-        <blockquote><span class="todo">[ВСТАВИТЬ: текст отзыва]</span></blockquote>
-        <figcaption><b class="todo">[ВСТАВИТЬ: имя]</b><span class="label">[ВСТАВИТЬ: роль или компания]</span></figcaption>
-      </figure>
-      <figure class="review">
-        <blockquote><span class="todo">[ВСТАВИТЬ: текст отзыва]</span></blockquote>
-        <figcaption><b class="todo">[ВСТАВИТЬ: имя]</b><span class="label">[ВСТАВИТЬ: роль или компания]</span></figcaption>
-      </figure>
-      <figure class="review">
-        <blockquote><span class="todo">[ВСТАВИТЬ: текст отзыва]</span></blockquote>
-        <figcaption><b class="todo">[ВСТАВИТЬ: имя]</b><span class="label">[ВСТАВИТЬ: роль или компания]</span></figcaption>
-      </figure>
+    <div class="reel">
+      <div class="reel-nav">
+        <button type="button" data-dir="-1" aria-label="Предыдущие отзывы">←</button>
+        <button type="button" data-dir="1" aria-label="Следующие отзывы">→</button>
+      </div>
+      <ul class="reel-track">
+        <li class="reel-item">
+          <video controls playsinline preload="none" poster="posters/khokhlov.jpg" src="video/khokhlov.mp4" aria-label="Видеоотзыв: Вячеслав Хохлов"></video>
+          <span class="reel-cap"><b>Вячеслав Хохлов</b><span class="label">Руководитель продакшена KHS</span></span>
+        </li>
+        <li class="reel-item">
+          <video controls playsinline preload="none" poster="posters/gorbacheva.jpg" src="video/gorbacheva.mp4" aria-label="Видеоотзыв: Анна Горбачева"></video>
+          <span class="reel-cap"><b>Анна Горбачева</b></span>
+        </li>
+        <li class="reel-item">
+          <video controls playsinline preload="none" poster="posters/molodyakova.jpg" src="video/molodyakova.mp4" aria-label="Видеоотзыв: Мария Молодякова"></video>
+          <span class="reel-cap"><b>Мария Молодякова</b></span>
+        </li>
+        <li class="reel-item">
+          <video controls playsinline preload="none" poster="posters/konokorovy.jpg" src="video/konokorovy.mp4" aria-label="Видеоотзыв: Михаил и Мария Конокоровы"></video>
+          <span class="reel-cap"><b>Михаил и Мария Конокоровы</b></span>
+        </li>
+        <li class="reel-item">
+          <video controls playsinline preload="none" poster="posters/panfenova.jpg" src="video/panfenova.mp4" aria-label="Видеоотзыв: Надежда Панфенова"></video>
+          <span class="reel-cap"><b>Надежда Панфенова</b></span>
+        </li>
+        <li class="reel-item">
+          <video controls playsinline preload="none" poster="posters/lebedeva.jpg" src="video/lebedeva.mp4" aria-label="Видеоотзыв: Ольга Лебедева"></video>
+          <span class="reel-cap"><b>Ольга Лебедева</b></span>
+        </li>
+        <li class="reel-item">
+          <video controls playsinline preload="none" poster="posters/grebeshov.jpg" src="video/grebeshov.mp4" aria-label="Видеоотзыв: Святослав Гребешов"></video>
+          <span class="reel-cap"><b>Святослав Гребешов</b></span>
+        </li>
+        <li class="reel-item">
+          <video controls playsinline preload="none" poster="posters/vasilyeva.jpg" src="video/vasilyeva.mp4" aria-label="Видеоотзыв: Татьяна Васильева"></video>
+          <span class="reel-cap"><b>Татьяна Васильева</b></span>
+        </li>
+      </ul>
     </div>
     <a class="btn" href="../contacts/index.html">Обсудить ролик</a>
   </div>
@@ -54,3 +81,4 @@
     <span>Видеомонтажёр · видеорежиссёр · AI-креатор</span>
   </footer>
 </div>
+<script src="../assets/reel.js"></script>
