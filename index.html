@@ -10,8 +10,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600&family=Golos+Text:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 
-<!-- Сцена за страницей: затемнённый баннер и сетка-пол. Стоит на месте, разделы проплывают над ней. -->
+<!-- Сцена за страницей: баннер с ангелом на первом экране, при прокрутке он растворяется и остаётся небо. Разделы проплывают над сценой. -->
 <div class="space" aria-hidden="true">
+  <img class="space-sky" src="img/sky.jpg" width="1600" height="1153" alt="">
   <img class="space-img" src="img/hero-angel.jpg" width="1774" height="887" alt="" fetchpriority="high">
   <div class="space-floor"></div>
   <div class="space-shade"></div>
@@ -33,20 +34,9 @@
 
 <main>
 <div class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div class="hero-text">
-      <span class="label">Видеомонтажёр, видеорежиссёр, AI-креатор</span>
-      <h1 class="reveal">Монтирую и создаю ролики для бизнеса и блогеров — в том числе с помощью ИИ</h1>
-      <p class="lead">Рекламные и имиджевые ролики, Reels и Shorts, обучающие видео. Вы рассказываете задачу, я предлагаю, каким будет ролик, и довожу его до готового файла.</p>
-      <a class="btn" href="#contact">Обсудить ролик</a>
-    </div>
-
-    <!-- ВСТАВИТЬ: ссылку на видео-приветствие (YouTube / VK Видео / Rutube) в href и добавить target="_blank" rel="noopener" -->
-    <a class="greet" href="#" aria-label="Смотреть видео-приветствие">
-      <span class="play" aria-hidden="true"></span>
-      <span class="greet-cap"><span>Видео-приветствие</span><span>[ВСТАВИТЬ: длительность]</span></span>
-    </a>
-  </div>
+  <!-- имя и «Создание видео» нарисованы на баннере; заголовок для поисковиков и экранных дикторов -->
+  <h1 class="sr-only">Виталий Горлов — создание видео</h1>
+  <a class="cue" href="#about" aria-label="Листать вниз">↓</a>
 </div>
 
 <section id="about">
@@ -69,20 +59,24 @@
 
 <section id="works">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="label">Работы</span>
-      <h2>Мои работы</h2>
-      <p>Проекты, над которыми я работал как режиссёр и монтажёр, и ролики, созданные с помощью ИИ. Нажмите на превью, чтобы посмотреть ролик.</p>
-    </div>
-
     <div class="stack">
       <div class="showreel" id="showreel">
-        <h3>Showreel — лучшее из моих работ</h3>
+        <div class="sec-head center">
+          <span class="label">Работы</span>
+          <h2>Showreel</h2>
+          <p>Лучшее из моих работ в одном ролике.</p>
+        </div>
         <!-- ВСТАВИТЬ: ссылку на showreel (YouTube / VK Видео / Rutube) в href и добавить target="_blank" rel="noopener" -->
         <a class="greet" href="#" aria-label="Смотреть showreel">
           <span class="play" aria-hidden="true"></span>
           <span class="greet-cap"><span>Showreel</span><span>[ВСТАВИТЬ: длительность]</span></span>
         </a>
+      </div>
+
+      <div>
+      <div class="sec-head center">
+        <h2>Мои работы</h2>
+        <p>Проекты, над которыми я работал как режиссёр и монтажёр, и ролики, созданные с помощью ИИ. Нажмите на превью, чтобы посмотреть ролик.</p>
       </div>
 
       <!-- Каждая строка: превью со ссылкой на ролик, название, вид работы, задача, что сделано, результат. -->
@@ -140,6 +134,7 @@
           </dl>
         </li>
       </ul>
+      </div>
       <a class="btn" href="#contact">Хочу такой же ролик</a>
     </div>
   </div>
@@ -281,6 +276,10 @@
         <li class="reel-item">
           <video controls playsinline preload="none" poster="reviews/posters/vasilyeva.jpg" src="reviews/video/vasilyeva.mp4" aria-label="Видеоотзыв: Татьяна Васильева"></video>
           <span class="reel-cap"><b>Татьяна Васильева</b></span>
+        </li>
+        <li class="reel-item">
+          <video controls playsinline preload="none" poster="reviews/posters/kayava.jpg" src="reviews/video/kayava.mp4" aria-label="Видеоотзыв: Симон Каява"></video>
+          <span class="reel-cap"><b>Симон Каява</b></span>
         </li>
       </ul>
     </div>

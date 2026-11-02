@@ -86,11 +86,20 @@ h1, h2 { font-family: var(--f-display); font-weight: 600; letter-spacing: -0.01e
 /* ——— Сцена ——— */
 /* --p: 0 у верха страницы, 1 через полтора экрана прокрутки; --y: смещение сетки-пола */
 .space { position: fixed; inset: 0; z-index: -1; overflow: hidden; background: var(--bg); }
+/* небо под баннером: вырезано из того же кадра; лёгкое размытие прячет увеличение, scale — размытые края */
+.space-sky {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: var(--img-filter) blur(3px);
+  transform: scale(1.05);
+}
+/* баннер с ангелом показывается без затемнения и растворяется за первые ~60% экрана прокрутки */
 .space-img {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover; object-position: 50% 42%;
-  filter: var(--img-filter);
+  opacity: calc(1 - var(--p, 0) * 2.5);
   transform-origin: 50% 42%;
   transform: translateY(calc(var(--p, 0) * -4%)) scale(calc(1 + var(--p, 0) * 0.14));
 }
@@ -105,11 +114,13 @@ h1, h2 { font-family: var(--f-display); font-weight: 600; letter-spacing: -0.01e
   transform: perspective(420px) rotateX(62deg);
   -webkit-mask-image: linear-gradient(transparent, #000 65%);
   mask-image: linear-gradient(transparent, #000 65%);
-  opacity: calc(0.35 + var(--p, 0) * 0.65);
+  opacity: calc(var(--p, 0) * 1.5);
 }
+/* пол и тень появляются только при прокрутке, чтобы первый экран был чистым баннером */
 .space-shade {
   position: absolute; inset: 0;
   background: linear-gradient(to bottom, var(--shade-top) 0%, transparent 28%, var(--shade-bottom) 94%);
+  opacity: calc(var(--p, 0) * 3);
 }
 .space-shade::after {
   content: ""; position: absolute; inset: 0;
@@ -119,10 +130,6 @@ h1, h2 { font-family: var(--f-display); font-weight: 600; letter-spacing: -0.01e
 /* на узком или вертикальном экране cover срезал бы имя — показываем баннер целиком сверху */
 @media (max-aspect-ratio: 3/2) {
   .space-img { inset: var(--head-h) 0 auto 0; height: auto; object-fit: fill; }
-  /* текст первого экрана начинается под баннером (его высота — половина ширины окна) */
-  .hero { min-height: 0; padding-top: calc(var(--head-h) + 50vw + 16px); }
-  .hero .wrap { max-width: var(--wrap); }
-  .hero-grid { min-height: 0; }
   .space-shade { background: linear-gradient(to bottom, var(--shade-top) 0%, transparent 20%, var(--shade-bottom) 62%); }
 }
 
@@ -152,40 +159,25 @@ h1, h2 { font-family: var(--f-display); font-weight: 600; letter-spacing: -0.01e
 .bar nav a:hover { color: var(--ink); background: var(--cell); }
 
 /* ——— Первый экран ——— */
+/* первый экран целиком отдан баннеру, разделы начинаются сразу под ним */
 .hero {
-  min-height: 100vh; min-height: 100svh;
-  display: grid; align-content: end;
-  padding-block: calc(var(--head-h) + 32px) clamp(40px, 8vh, 88px);
+  position: relative;
+  height: 100vh; height: 100svh;
 }
-/* текст и видео лежат на стеклянной плите во всю ширину: надпись на баннере под ней размывается целиком и не спорит с заголовком */
-/* размеры плиты привязаны к окну: надпись на баннере растёт вместе с экраном и занимает ~72% ширины, верх букв — на ~39% высоты */
-.hero .wrap { max-width: max(var(--wrap), 76vw); }
-.hero-grid {
-  min-height: 56vh; min-height: 56svh;
-  display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: end;
-  padding: clamp(22px, 3vw, 40px);
-  background: var(--panel);
-  -webkit-backdrop-filter: blur(22px) saturate(1.1); backdrop-filter: blur(22px) saturate(1.1);
-  box-shadow: inset 0 0 0 1px var(--panel-line);
-  border-radius: 8px;
+.sr-only {
+  position: absolute; width: 1px; height: 1px; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
 }
-.hero-text { display: grid; gap: 18px; justify-items: start; }
-.hero h1 { font-size: clamp(1.6rem, 2.9vw, 2.55rem); line-height: 1.14; }
-.lead { max-width: 52ch; font-size: var(--s-3); color: var(--muted); margin: 0; }
-
-/* заголовок один раз проявляется по буквам при открытии (буквы расставляет assets/space.js) */
-.reveal .w { white-space: nowrap; }
-.reveal .ch {
-  display: inline-block;
-  animation: ch-in 1.3s var(--ease) both;
-  animation-delay: calc(var(--i) * 18ms + 150ms);
+.cue {
+  position: absolute; left: 50%; top: calc(100svh - 72px);
+  width: 44px; height: 44px; margin-left: -22px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: rgba(6, 8, 14, 0.35);
+  color: #fff; text-decoration: none; font-size: 1.2rem;
+  animation: cue 2.4s var(--ease) infinite;
 }
-@keyframes ch-in {
-  0% { opacity: 0; filter: blur(10px); transform: translateY(0.35em); color: var(--accent); }
-  45% { opacity: 1; filter: blur(0); color: var(--accent); }
-  100% { opacity: 1; transform: none; color: var(--ink); }
-}
-
+@keyframes cue { 50% { transform: translateY(6px); } }
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   padding: 16px 28px;
@@ -230,8 +222,7 @@ h1, h2 { font-family: var(--f-display); font-weight: 600; letter-spacing: -0.01e
 }
 
 /* ——— Разделы: стеклянные панели над сценой ——— */
-section { padding-block: clamp(12px, 3vw, 28px); scroll-margin-top: var(--head-h); }
-section > .wrap {
+section { padding-block: clamp(12px, 3vw, 28px); scroll-margin-top: var(--head-h); }section > .wrap {
   padding: clamp(24px, 5vw, 64px);
   background: var(--panel);
   -webkit-backdrop-filter: blur(18px) saturate(1.1); backdrop-filter: blur(18px) saturate(1.1);
@@ -241,6 +232,7 @@ section > .wrap {
 .sec-head { display: grid; gap: 10px; margin-bottom: clamp(28px, 4vw, 44px); }
 .sec-head h2 { font-size: var(--s-2); line-height: 1.12; }
 .sec-head p { margin: 0; max-width: 60ch; color: var(--muted); }
+.sec-head.center { justify-items: center; text-align: center; }
 .subtitle { font-size: var(--s-3); font-weight: 500; color: var(--muted); }
 /* несколько блоков внутри одного раздела, кнопка — по левому краю */
 .stack { display: grid; gap: clamp(36px, 5vw, 56px); }
@@ -253,7 +245,7 @@ section > .wrap {
 .prose p { margin: 0; }
 
 /* работы: список строк — превью, название, задача / сделано / результат */
-.showreel { max-width: 860px; display: grid; gap: 16px; }
+.showreel { max-width: 860px; width: 100%; margin-inline: auto; display: grid; }
 .showreel h3, .tools h3 { font-size: var(--s-3); font-weight: 600; }
 .work-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .work {
@@ -382,8 +374,7 @@ footer {
 }
 
 @media (max-width: 900px) {
-  .hero-grid, .about { grid-template-columns: 1fr; }
-  .hero-grid .greet { max-width: 520px; width: 100%; }
+  .about { grid-template-columns: 1fr; }
   .work { grid-template-columns: 160px 1fr; }
   .work dl { grid-column: 1 / -1; }
   .process { grid-template-columns: 1fr 1fr; }
@@ -406,10 +397,16 @@ footer {
   .btn, .stack > .btn { width: 100%; justify-self: stretch; }
   .play { width: 60px; height: 60px; }
 }
+/* узкий или вертикальный экран: баннер показан целиком сверху (его высота — половина ширины окна),
+   разделы начинаются сразу под ним. Стоит после основных правил .hero, иначе они его перебивают. */
+@media (max-aspect-ratio: 3/2) {
+  .hero { height: calc(var(--head-h) + 50vw + 8px); }
+  .cue { display: none; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .space-img { transform: none; }
   .space-floor { background-position: 50% 0; }
-  .reveal .ch { animation: none; }
+  .cue { animation: none; }
   .btn, .play { transition: none; }
 }
