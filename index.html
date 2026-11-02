@@ -234,16 +234,12 @@
 
 <section id="reviews">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="label">Отзывы</span>
-      <h2>Что говорят клиенты</h2>
+    <div class="sec-head center reviews-head">
+      <h2>Отзывы</h2>
       <p>Видеоотзывы людей, с которыми я работал. Листайте влево и вправо.</p>
     </div>
     <div class="reel">
-      <div class="reel-nav">
-        <button type="button" data-dir="-1" aria-label="Предыдущие отзывы">←</button>
-        <button type="button" data-dir="1" aria-label="Следующие отзывы">→</button>
-      </div>
+      <button class="reel-btn" type="button" data-dir="-1" aria-label="Предыдущие отзывы">←</button>
       <ul class="reel-track">
         <li class="reel-item">
           <video controls playsinline preload="none" poster="reviews/posters/khokhlov.jpg" src="reviews/video/khokhlov.mp4" aria-label="Видеоотзыв: Вячеслав Хохлов"></video>
@@ -282,6 +278,7 @@
           <span class="reel-cap"><b>Мария Молодякова</b><span>Учитель математики</span></span>
         </li>
       </ul>
+      <button class="reel-btn" type="button" data-dir="1" aria-label="Следующие отзывы">→</button>
     </div>
   </div>
 </section>

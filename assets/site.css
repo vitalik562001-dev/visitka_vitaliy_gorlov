@@ -306,9 +306,12 @@ section { padding-block: clamp(12px, 3vw, 28px); scroll-margin-top: var(--head-h
 .tools li { font-size: 0.9rem; padding: 6px 12px; box-shadow: inset 0 0 0 1px var(--line); border-radius: 4px; }
 
 /* лента видеоотзывов: прокрутка влево-вправо, карточки 9:16, неформатные видео вписаны целиком */
-.reel { display: grid; gap: 16px; min-width: 0; }
-.reel-nav { display: flex; gap: 8px; justify-content: flex-end; }
-.reel-nav button {
+.reviews-head h2 { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.05; }
+.reviews-head p { font-size: var(--s-5); }
+/* стрелки по краям ленты, на уровне середины видео (подпись под карточкой занимает ~50px) */
+.reel { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; align-items: center; }
+.reel-btn {
+  margin-bottom: 50px;
   width: 44px; height: 44px;
   border: 0; border-radius: 50%;
   box-shadow: inset 0 0 0 1px var(--line);
@@ -316,8 +319,8 @@ section { padding-block: clamp(12px, 3vw, 28px); scroll-margin-top: var(--head-h
   font: 1.1rem var(--f-body);
   cursor: pointer;
 }
-.reel-nav button:hover:not(:disabled) { box-shadow: inset 0 0 0 1px var(--accent); }
-.reel-nav button:disabled { opacity: 0.35; cursor: default; }
+.reel-btn:hover:not(:disabled) { box-shadow: inset 0 0 0 1px var(--accent); }
+.reel-btn:disabled { opacity: 0.35; cursor: default; }
 .reel-track {
   display: grid; grid-auto-flow: column; grid-auto-columns: clamp(200px, 24vw, 260px);
   gap: 14px;
