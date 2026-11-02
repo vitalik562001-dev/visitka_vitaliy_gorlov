@@ -1,3 +1,5 @@
+<!doctype html>
+<html lang="ru">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Виталий Горлов</title>
@@ -10,19 +12,19 @@
 
 <div class="wrap">
   <header class="bar">
-    <a class="label rec" href="index.html">Виталий Горлов</a>
-    <nav class="label" aria-label="Разделы сайта">
-      <a href="index.html" aria-current="page">Главная</a>
-      <a href="о%20себе/index.html">О себе</a>
-      <a href="showreel/index.html">Showreel</a>
-      <a href="works/index.html">Работы</a>
-      <a href="reviews/index.html">Отзывы</a>
-      <a href="contacts/index.html">Контакты</a>
+    <a class="label rec" href="#top">Виталий Горлов</a>
+    <nav class="label" aria-label="Разделы страницы">
+      <a href="#about">О себе</a>
+      <a href="#services">Услуги</a>
+      <a href="#works">Работы</a>
+      <a href="#experience">Опыт</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contact">Контакты</a>
     </nav>
   </header>
 </div>
 
-<div class="banner">
+<div class="banner" id="top">
   <img src="img/hero-banner.jpg" width="2048" height="768"
        alt="Виталий Горлов — создание видео на заказ" fetchpriority="high">
 </div>
@@ -33,7 +35,7 @@
       <span class="label">Видеомонтажёр · видеорежиссёр · AI-креатор</span>
       <h1>Монтирую и создаю ролики для бизнеса и блогеров — <em>в том числе с помощью ИИ</em></h1>
       <p class="lead">Рекламные и имиджевые ролики, Reels и Shorts, обучающие видео. Вы рассказываете задачу, я предлагаю, каким будет ролик, и довожу его до готового файла.</p>
-      <a class="btn" href="contacts/index.html">Обсудить ролик</a>
+      <a class="btn" href="#contact">Обсудить ролик</a>
     </div>
 
     <!-- ВСТАВИТЬ: ссылку на видео-приветствие (YouTube / VK Видео / Rutube) в href и добавить target="_blank" rel="noopener" -->
@@ -56,14 +58,13 @@
         <p>Я Виталий Горлов — режиссёр монтажа и AI-креатор. Более 5 лет работаю с видео и воплощаю идеи в готовый контент.</p>
         <p>Создаю динамичные ролики для бизнеса, экспертов и творческих проектов: от Reels, рекламы и подкастов до AI-генераций видео и изображений.</p>
         <p>Также создаю христианский мотивационный контент, который вдохновляет людей, помогает находить надежду и напоминает о важных жизненных ценностях.</p>
-        <p><a class="more" href="о%20себе/index.html">Подробнее обо мне</a></p>
       </div>
       <img class="about-photo" src="о%20себе/vitaliy-gorlov.jpg" width="1463" height="1075" alt="Виталий Горлов" loading="lazy">
     </div>
   </div>
 </section>
 
-<section id="tracks">
+<section id="services">
   <div class="wrap">
     <div class="sec-head">
       <span class="label">Таймлайн услуг</span>
@@ -102,53 +103,133 @@
   </div>
 </section>
 
-<section id="process">
+<section id="works">
   <div class="wrap">
     <div class="sec-head">
-      <span class="label">Маркеры на таймлайне</span>
-      <h2>Как идёт работа</h2>
-      <p>Шесть этапов, от брифа до мастер‑файла. На каждом вы видите результат и вносите правки.</p>
+      <span class="label">Работы</span>
+      <h2>Мои работы</h2>
+      <p>Проекты, над которыми я работал как режиссёр и монтажёр, и ролики, созданные с помощью ИИ. Нажмите на превью, чтобы посмотреть ролик.</p>
     </div>
-    <ol class="process">
-      <li><span class="mono">00:00:00:00 · IN</span><h3>Бриф</h3><p>Обсуждаем задачу, референсы, хронометраж и сроки.</p></li>
-      <li><span class="mono">00:00:05:00</span><h3>Сборка</h3><p>Отсматриваю исходники, отбираю лучшие дубли, генерирую недостающее.</p></li>
-      <li><span class="mono">00:00:10:00</span><h3>Черновой монтаж</h3><p>Структура и ритм. Первая версия на согласование.</p></li>
-      <li><span class="mono">00:00:15:00</span><h3>Чистовой монтаж</h3><p>Точные склейки, графика, титры, ИИ‑кадры на своих местах.</p></li>
-      <li><span class="mono">00:00:20:00</span><h3>Цвет и звук</h3><p>Грейдинг, сведение, финальная полировка.</p></li>
-      <li><span class="mono">00:00:25:00 · OUT</span><h3>Мастер</h3><p>Отдаю файлы во всех нужных форматах и ресайзах.</p></li>
-    </ol>
+
+    <div class="stack">
+      <div class="showreel" id="showreel">
+        <h3>Showreel — лучшее из моих работ</h3>
+        <!-- ВСТАВИТЬ: ссылку на showreel (YouTube / VK Видео / Rutube) в href и добавить target="_blank" rel="noopener" -->
+        <a class="greet" href="#" aria-label="Смотреть showreel">
+          <span class="play" aria-hidden="true"></span>
+          <span class="greet-cap"><span>Showreel</span><span>[ВСТАВИТЬ: длительность]</span></span>
+        </a>
+      </div>
+
+      <div class="works">
+        <article class="work">
+          <!-- ВСТАВИТЬ: ссылку на проект и превью -->
+          <a class="greet" href="#" aria-label="Смотреть проект 1">
+            <span class="badge">[ВСТАВИТЬ: монтаж / создано с ИИ]</span>
+            <span class="play" aria-hidden="true"></span>
+          </a>
+          <h3><span class="todo">[ВСТАВИТЬ: название проекта 1]</span></h3>
+          <dl>
+            <div><dt>Задача клиента</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
+            <div><dt>Что я сделал</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
+            <div><dt>Результат</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
+          </dl>
+        </article>
+        <article class="work">
+          <!-- ВСТАВИТЬ: ссылку на проект и превью -->
+          <a class="greet" href="#" aria-label="Смотреть проект 2">
+            <span class="badge">[ВСТАВИТЬ: монтаж / создано с ИИ]</span>
+            <span class="play" aria-hidden="true"></span>
+          </a>
+          <h3><span class="todo">[ВСТАВИТЬ: название проекта 2]</span></h3>
+          <dl>
+            <div><dt>Задача клиента</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
+            <div><dt>Что я сделал</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
+            <div><dt>Результат</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
+          </dl>
+        </article>
+        <article class="work">
+          <!-- ВСТАВИТЬ: ссылку на проект и превью -->
+          <a class="greet" href="#" aria-label="Смотреть проект 3">
+            <span class="badge">[ВСТАВИТЬ: монтаж / создано с ИИ]</span>
+            <span class="play" aria-hidden="true"></span>
+          </a>
+          <h3><span class="todo">[ВСТАВИТЬ: название проекта 3]</span></h3>
+          <dl>
+            <div><dt>Задача клиента</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
+            <div><dt>Что я сделал</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
+            <div><dt>Результат</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
+          </dl>
+        </article>
+        <article class="work">
+          <!-- ВСТАВИТЬ: ссылку на проект и превью -->
+          <a class="greet" href="#" aria-label="Смотреть проект 4">
+            <span class="badge">[ВСТАВИТЬ: монтаж / создано с ИИ]</span>
+            <span class="play" aria-hidden="true"></span>
+          </a>
+          <h3><span class="todo">[ВСТАВИТЬ: название проекта 4]</span></h3>
+          <dl>
+            <div><dt>Задача клиента</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
+            <div><dt>Что я сделал</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
+            <div><dt>Результат</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
+          </dl>
+        </article>
+      </div>
+      <a class="btn" href="#contact">Хочу такой же ролик</a>
+    </div>
   </div>
 </section>
 
-<section id="tools">
+<section id="experience">
   <div class="wrap">
     <div class="sec-head">
-      <span class="label">Монтажная</span>
-      <h2>Инструменты</h2>
+      <span class="label">Опыт</span>
+      <h2>Опыт и инструменты</h2>
     </div>
-    <div class="tools">
-      <div>
-        <h3 class="label">Монтаж, цвет, графика</h3>
-        <ul>
-          <li>Adobe Premiere Pro</li>
-          <li>DaVinci Resolve</li>
-          <li>After Effects</li>
-          <li>CapCut</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="label">Нейросети</h3>
-        <ul>
-          <li>Midjourney</li>
-          <li>Runway</li>
-          <li>Kling</li>
-          <li>Veo</li>
-          <li>ComfyUI</li>
-          <li>ElevenLabs</li>
-          <li>Suno</li>
-        </ul>
+    <div class="stack">
+      <dl class="facts">
+        <div><dt>Проектов как режиссёр и монтажёр</dt><dd>20</dd></div>
+        <div><dt>Проектов с помощью ИИ</dt><dd>10</dd></div>
+        <div><dt>Форматы</dt><dd>Клипы, подкасты, говорящая голова</dd></div>
+      </dl>
+      <div class="tools">
+        <div>
+          <h3 class="label">Монтаж, цвет, графика</h3>
+          <ul>
+            <li>Adobe Premiere Pro</li>
+            <li>DaVinci Resolve</li>
+            <li>After Effects</li>
+            <li>CapCut</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="label">Нейросети</h3>
+          <ul>
+            <li>Midjourney</li>
+            <li>Runway</li>
+            <li>Kling</li>
+            <li>Veo</li>
+            <li>ComfyUI</li>
+            <li>ElevenLabs</li>
+            <li>Suno</li>
+          </ul>
+        </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Образование</span>
+      <h2>Где я учился</h2>
+    </div>
+    <dl class="facts">
+      <div><dt>Школа</dt><dd>Московская школа видеомонтажа</dd></div>
+      <div><dt>Год</dt><dd><span class="todo">[ВСТАВИТЬ: год выпуска]</span></dd></div>
+      <div><dt>Программа</dt><dd><span class="todo">[ВСТАВИТЬ: название программы]</span></dd></div>
+    </dl>
   </div>
 </section>
 
@@ -202,6 +283,24 @@
   </div>
 </section>
 
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Маркеры на таймлайне</span>
+      <h2>Как идёт работа</h2>
+      <p>Шесть этапов, от брифа до мастер‑файла. На каждом вы видите результат и вносите правки.</p>
+    </div>
+    <ol class="process">
+      <li><span class="mono">00:00:00:00 · IN</span><h3>Бриф</h3><p>Обсуждаем задачу, референсы, хронометраж и сроки.</p></li>
+      <li><span class="mono">00:00:05:00</span><h3>Сборка</h3><p>Отсматриваю исходники, отбираю лучшие дубли, генерирую недостающее.</p></li>
+      <li><span class="mono">00:00:10:00</span><h3>Черновой монтаж</h3><p>Структура и ритм. Первая версия на согласование.</p></li>
+      <li><span class="mono">00:00:15:00</span><h3>Чистовой монтаж</h3><p>Точные склейки, графика, титры, ИИ‑кадры на своих местах.</p></li>
+      <li><span class="mono">00:00:20:00</span><h3>Цвет и звук</h3><p>Грейдинг, сведение, финальная полировка.</p></li>
+      <li><span class="mono">00:00:25:00 · OUT</span><h3>Мастер</h3><p>Отдаю файлы во всех нужных форматах и ресайзах.</p></li>
+    </ol>
+  </div>
+</section>
+
 <section id="contact" class="contact">
   <div class="wrap">
     <div class="sec-head">
@@ -209,10 +308,18 @@
       <h2>Есть материал? <em>Смонтируем.</em></h2>
       <p>Напишите пару строк о проекте. Отвечу в течение дня и назову сроки и стоимость.</p>
     </div>
-    <div class="links">
-      <a href="https://t.me/username"><span class="label">Telegram</span><b>@username</b></a>
-      <a href="#contact"><span class="label">Почта</span><b>mail@example.com</b></a>
-      <a href="showreel/index.html"><span class="label">Шоурил</span><b>Смотреть showreel</b></a>
+    <div class="stack">
+      <div class="links">
+        <div><span class="label">Telegram</span><b class="todo">[ВСТАВИТЬ: @ник]</b></div>
+        <div><span class="label">Телефон</span><b class="todo">[ВСТАВИТЬ: номер]</b></div>
+        <div><span class="label">Email</span><b class="todo">[ВСТАВИТЬ: почта]</b></div>
+      </div>
+
+      <!-- Форма заявки: имя, способ связи, тип ролика, описание задачи. Собрать после выбора хранилища заявок. -->
+      <div class="form-todo">
+        <span class="label">Форма заявки</span>
+        <p class="todo">[ВСТАВИТЬ: форма заявки — после выбора, куда приходят заявки]</p>
+      </div>
     </div>
   </div>
 </section>
@@ -220,7 +327,7 @@
 <div class="wrap">
   <footer class="label">
     <span>© 2026 Виталий Горлов</span>
-    <span>Режиссёр монтажа · ИИ‑креатор</span>
+    <span>Видеомонтажёр · видеорежиссёр · AI-креатор</span>
   </footer>
 </div>
 <script src="assets/reel.js"></script>
