@@ -256,6 +256,11 @@ section { padding-block: clamp(12px, 3vw, 28px); scroll-margin-top: var(--head-h
 .genre-head h3 { font-size: var(--s-3); font-weight: 600; }
 .genre-head .tcode { color: var(--accent-ink); }
 .work-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px 14px; }
+/* крупная сетка 2 × 2 */
+.work-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
+.work-grid.two .poster .play { width: 64px; height: 64px; }
+.work-grid.two .poster .play::before { margin-left: 5px; border-left-width: 18px; border-top-width: 11px; border-bottom-width: 11px; }
+.work-grid.two .work-title { font-size: var(--s-3); }
 .work-card { display: grid; gap: 10px; align-content: start; text-decoration: none; }
 a.work-card:focus-visible { outline-offset: 4px; }
 .poster {
@@ -435,6 +440,10 @@ footer {
   .process, .tools, .facts { grid-template-columns: 1fr; }
   /* на маленьком превью название наезжает на кнопку — оно и так подписано под карточкой */
   .slate-name { display: none; }
+  .work-grid.two { gap: 20px 12px; }
+  .work-grid.two .poster .play { width: 44px; height: 44px; }
+  .work-grid.two .poster .play::before { margin-left: 4px; border-left-width: 13px; border-top-width: 8px; border-bottom-width: 8px; }
+  .work-grid.two .work-title { font-size: var(--s-4); }
 }
 @media (max-width: 480px) {
   .btn, .stack > .btn { width: 100%; justify-self: stretch; }
