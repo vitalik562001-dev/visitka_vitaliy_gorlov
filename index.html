@@ -36,8 +36,8 @@
 <div class="hero" id="top">
   <!-- имя и «Создание видео» нарисованы на баннере; заголовок для поисковиков и экранных дикторов -->
   <h1 class="sr-only">Виталий Горлов — создание видео</h1>
-  <!-- открывает окно с анкетой (assets/order.js); без JS просто ведёт к контактам -->
-  <a class="btn btn-red hero-cta" href="#contact" data-order>Заказать видео</a>
+  <!-- ведёт на Яндекс Форму с анкетой; ответы приходят владельцу на почту -->
+  <a class="btn btn-red hero-cta" href="https://forms.yandex.ru/u/6aece6a9c45c07a532aff536/" target="_blank" rel="noopener">Заказать видео</a>
   <a class="cue" href="#about" aria-label="Листать вниз">↓</a>
 </div>
 
@@ -367,17 +367,6 @@
   <span>Видеомонтажёр, видеорежиссёр, AI-креатор</span>
 </footer>
 
-<!-- Анкета заявки. Открывается кнопкой «Заказать видео» (любая ссылка с data-order).
-     Сама анкета — Яндекс Форма во встроенном окне; ответы приходят владельцу на почту.
-     Ссылка на форму задаётся в assets/order.js (FORM_URL). -->
-<dialog class="order" id="order" aria-labelledby="order-title">
-  <button class="order-close" type="button" aria-label="Закрыть анкету">✕</button>
-  <div class="order-body">
-    <h2 id="order-title">Давайте познакомимся</h2>
-    <div class="order-frame"></div>
-    <p class="order-alt">Если анкета не открылась, напишите мне в Telegram: <a href="https://t.me/Vitaliy_Gorlov_Creator" target="_blank" rel="noopener">@Vitaliy_Gorlov_Creator</a></p>
-  </div>
-</dialog>
 <!-- плеер работ: открывается поверх страницы на весь экран -->
 <div class="player" id="player" role="dialog" aria-modal="true" aria-label="Просмотр ролика" hidden>
   <button class="player-close" type="button" aria-label="Закрыть ролик">✕</button>
@@ -389,4 +378,3 @@
 <script src="assets/reel.js"></script>
 <script src="assets/works.js"></script>
 <script src="assets/timeline.js"></script>
-<script src="assets/order.js"></script>

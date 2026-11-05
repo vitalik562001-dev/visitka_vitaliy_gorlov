@@ -501,30 +501,6 @@ ol.tl-lane { list-style: none; margin: 0; }
   padding: 18px 36px; font-size: 1.15rem;
   box-shadow: 0 12px 34px -12px rgba(0, 0, 0, 0.55);
 }
-html.order-open { overflow: hidden; }
-.order {
-  width: min(680px, calc(100vw - 24px)); max-height: calc(100dvh - 24px);
-  padding: 0; border: 0; border-radius: 8px;
-  background: var(--bg); color: var(--ink);
-  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6), inset 0 0 0 1px var(--panel-line);
-  overflow: auto; overscroll-behavior: contain;
-}
-.order::backdrop { background: rgba(4, 5, 10, 0.62); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
-.order-body { padding: clamp(20px, 5vw, 40px); padding-top: 8px; }
-.order h2 { font-size: clamp(1.4rem, 5vw, 1.9rem); text-align: center; margin: 0 0 20px; }
-.order-close {
-  display: grid; place-items: center;
-  margin: 8px 8px 0 auto;
-  width: 44px; height: 44px; border: 0; border-radius: 4px;
-  background: var(--cell); color: var(--ink); font-size: 1.1rem; cursor: pointer;
-}
-.order-close:hover { background: var(--line); }
-/* Яндекс Форма всегда на белом фоне — даём ей белую подложку, чтобы и в тёмной теме это выглядело аккуратно */
-.order-frame { background: #fff; border-radius: 6px; overflow: hidden; }
-.order-frame iframe { display: block; width: 100%; min-height: 560px; border: 0; }
-.order-frame .todo { margin: 0; padding: 24px; color: #7f5300; }
-.order-alt { margin: 16px 0 0; font-size: var(--s-5); color: var(--muted); text-align: center; }
-.order-alt a { color: var(--accent-ink); }
 
 footer {
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px;
