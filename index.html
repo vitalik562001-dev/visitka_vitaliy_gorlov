@@ -79,18 +79,18 @@
         <p>Клипы, ролики с говорящей головой и реклама. Нажмите на превью — ролик откроется на весь экран.</p>
       </div>
 
-      <!-- Три раздела по 4 ролика. Ролики лежат на Google Диске: data-video — id файла, по клику он открывается в плеере на весь экран (assets/works.js).
-           Превью без картинки — «хлопушка» с названием (у таких роликов первый кадр чёрный). -->
+      <!-- Три раздела по жанрам. Ролики сжаты для сайта и лежат в works/video: data-src — путь к файлу,
+           по клику он сразу играет в плеере на весь экран (assets/works.js). -->
       <div class="genres">
         <div class="genre">
           <div class="genre-head"><span class="tcode">01</span><h3>Музыкальные клипы</h3></div>
           <!-- клипы из папки «портфолио/Музыкальные клипы»; обложки владельца из папки «обложки видео» -->
           <ul class="work-grid two">
-            <li><a class="work-card" href="https://drive.google.com/file/d/1spzzFKvDmpMFgfqq9U5mPBS21CS3bWnV/view" target="_blank" rel="noopener" data-video="1spzzFKvDmpMFgfqq9U5mPBS21CS3bWnV">
+            <li><a class="work-card" href="works/video/hiawata.mp4" target="_blank" rel="noopener" data-src="works/video/hiawata.mp4">
               <span class="poster"><img src="img/works/hiawata.jpg" width="1280" height="700" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
               <span class="work-title">HIAWATA — VALLEY BOYS</span>
             </a></li>
-            <li><a class="work-card" href="https://drive.google.com/file/d/1Sf77OoY9F6pXct_KQOjawb9BRxwYo33R/view" target="_blank" rel="noopener" data-video="1Sf77OoY9F6pXct_KQOjawb9BRxwYo33R">
+            <li><a class="work-card" href="works/video/klip.mp4" target="_blank" rel="noopener" data-src="works/video/klip.mp4">
               <span class="poster"><img src="img/works/klip.jpg" width="1280" height="728" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
               <span class="work-title">loftstyle</span>
             </a></li>
@@ -113,16 +113,14 @@
               <span class="poster"><img src="img/works/head-davinci.jpg" width="726" height="469" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
               <span class="work-title">YouTube-контент: DaVinci Resolve — программа для профессионального монтажа</span>
             </a></li>
-            <li><a class="work-card" href="https://drive.google.com/file/d/15rHh96aPhB5bwM3pF-lEQTTPxAzvhgt4/view" target="_blank" rel="noopener" data-video="15rHh96aPhB5bwM3pF-lEQTTPxAzvhgt4">
+            <li><a class="work-card" href="works/video/head-1009.mp4" target="_blank" rel="noopener" data-src="works/video/head-1009.mp4">
               <span class="poster"><img src="img/works/head-1009.jpg" width="1675" height="976" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
               <span class="work-title">YouTube-контент: Как новичку освоить DaVinci Resolve и начать зарабатывать</span>
             </a></li>
           </ul>
         </div>
 
-        <!-- ролики из папки «портфолио/РЕКЛАМА»; обложки владельца из папки «обложки видео/реклама».
-             ВСТАВИТЬ: «МОЙ СПОРТ» весит 113 МБ, GitHub не принимает файлы больше 100 МБ — нужна сжатая версия в works/video/ad-sport.mp4 -->
-        <!-- data-src — файл в works/video: по клику играет сразу на весь экран -->
+        <!-- ролики из папки «портфолио/РЕКЛАМА»; обложки владельца из папки «обложки видео/реклама» -->
         <div class="genre">
           <div class="genre-head"><span class="tcode">03</span><h3>Реклама</h3></div>
           <ul class="work-grid two">
@@ -130,11 +128,10 @@
               <span class="poster"><img src="img/works/ad-fan.jpg" width="776" height="433" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
               <span class="work-title">Рекламный ролик вентилятор</span>
             </a></li>
-            <!-- ВСТАВИТЬ: когда появится works/video/ad-sport.mp4 — сделать карточку ссылкой с data-src, как у вентилятора -->
-            <li><div class="work-card">
-              <span class="poster"><img src="img/works/ad-sport.jpg" width="631" height="405" alt="" loading="lazy"></span>
+            <li><a class="work-card" href="works/video/ad-sport.mp4" target="_blank" rel="noopener" data-src="works/video/ad-sport.mp4">
+              <span class="poster"><img src="img/works/ad-sport.jpg" width="631" height="405" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
               <span class="work-title">Рекламный ролик МОЙ СПОРТ</span>
-            </div></li>
+            </a></li>
           </ul>
         </div>
       </div>
