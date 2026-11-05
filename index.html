@@ -76,64 +76,56 @@
       <div>
       <div class="sec-head center">
         <h2>Мои работы</h2>
-        <p>Проекты, над которыми я работал как режиссёр и монтажёр, и ролики, созданные с помощью ИИ. Нажмите на превью, чтобы посмотреть ролик.</p>
+        <p>Клипы, ролики с говорящей головой и реклама. Нажмите на превью — ролик откроется на весь экран.</p>
       </div>
 
-      <!-- Каждая строка: превью со ссылкой на ролик, название, вид работы, задача, что сделано, результат. -->
-      <ul class="work-list">
-        <li class="work">
-          <!-- ВСТАВИТЬ: ссылку на проект и превью -->
-          <a class="thumb" href="#" aria-label="Смотреть проект 1"><span class="play" aria-hidden="true"></span></a>
-          <div class="work-head">
-            <h3><span class="todo">[ВСТАВИТЬ: название проекта 1]</span></h3>
-            <span class="kind todo">[ВСТАВИТЬ: монтаж / создано с ИИ]</span>
-          </div>
-          <dl>
-            <div><dt>Задача клиента</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
-            <div><dt>Что я сделал</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
-            <div><dt>Результат</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
-          </dl>
-        </li>
-        <li class="work">
-          <!-- ВСТАВИТЬ: ссылку на проект и превью -->
-          <a class="thumb" href="#" aria-label="Смотреть проект 2"><span class="play" aria-hidden="true"></span></a>
-          <div class="work-head">
-            <h3><span class="todo">[ВСТАВИТЬ: название проекта 2]</span></h3>
-            <span class="kind todo">[ВСТАВИТЬ: монтаж / создано с ИИ]</span>
-          </div>
-          <dl>
-            <div><dt>Задача клиента</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
-            <div><dt>Что я сделал</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
-            <div><dt>Результат</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
-          </dl>
-        </li>
-        <li class="work">
-          <!-- ВСТАВИТЬ: ссылку на проект и превью -->
-          <a class="thumb" href="#" aria-label="Смотреть проект 3"><span class="play" aria-hidden="true"></span></a>
-          <div class="work-head">
-            <h3><span class="todo">[ВСТАВИТЬ: название проекта 3]</span></h3>
-            <span class="kind todo">[ВСТАВИТЬ: монтаж / создано с ИИ]</span>
-          </div>
-          <dl>
-            <div><dt>Задача клиента</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
-            <div><dt>Что я сделал</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
-            <div><dt>Результат</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
-          </dl>
-        </li>
-        <li class="work">
-          <!-- ВСТАВИТЬ: ссылку на проект и превью -->
-          <a class="thumb" href="#" aria-label="Смотреть проект 4"><span class="play" aria-hidden="true"></span></a>
-          <div class="work-head">
-            <h3><span class="todo">[ВСТАВИТЬ: название проекта 4]</span></h3>
-            <span class="kind todo">[ВСТАВИТЬ: монтаж / создано с ИИ]</span>
-          </div>
-          <dl>
-            <div><dt>Задача клиента</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
-            <div><dt>Что я сделал</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
-            <div><dt>Результат</dt><dd><span class="todo">[ВСТАВИТЬ]</span></dd></div>
-          </dl>
-        </li>
-      </ul>
+      <!-- Три раздела по 4 ролика. Ролики лежат на Google Диске: data-video — id файла, по клику он открывается в плеере на весь экран (assets/works.js).
+           Превью без картинки — «хлопушка» с названием (у таких роликов первый кадр чёрный). -->
+      <div class="genres">
+        <div class="genre">
+          <div class="genre-head"><span class="tcode">01</span><h3>Музыкальные клипы</h3></div>
+          <ul class="work-grid">
+            <li><a class="work-card" href="https://drive.google.com/file/d/1spzzFKvDmpMFgfqq9U5mPBS21CS3bWnV/view" target="_blank" rel="noopener" data-video="1spzzFKvDmpMFgfqq9U5mPBS21CS3bWnV">
+              <span class="poster"><img src="img/works/hiawata.jpg" width="640" height="352" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+              <span class="work-title">HIAWATA — VALLEY BOYS</span>
+            </a></li>
+            <li><a class="work-card" href="https://drive.google.com/file/d/1nf9jjs5_l9QTrW7HsHtimvvZK0R64iUC/view" target="_blank" rel="noopener" data-video="1nf9jjs5_l9QTrW7HsHtimvvZK0R64iUC">
+              <span class="poster slate"><span class="slate-name" aria-hidden="true">Любовь</span><span class="play" aria-hidden="true"></span></span>
+              <span class="work-title">Любовь</span>
+            </a></li>
+            <li><a class="work-card" href="https://drive.google.com/file/d/17d8kGHKAQvmHJF8dDem9sUw5lsAt0lu0/view" target="_blank" rel="noopener" data-video="17d8kGHKAQvmHJF8dDem9sUw5lsAt0lu0">
+              <span class="poster slate"><span class="slate-name" aria-hidden="true">Наша страна — Россия</span><span class="play" aria-hidden="true"></span></span>
+              <span class="work-title">Наша страна — Россия</span>
+            </a></li>
+            <li><a class="work-card" href="https://drive.google.com/file/d/1pONXO7SYF5d5bPdp5GPosp0yKuRX4OtN/view" target="_blank" rel="noopener" data-video="1pONXO7SYF5d5bPdp5GPosp0yKuRX4OtN">
+              <span class="poster"><img src="img/works/ai-clip.jpg" width="1280" height="720" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+              <span class="work-title">Клип с ИИ <span class="ai-tag">Создано с ИИ</span></span>
+            </a></li>
+          </ul>
+        </div>
+
+        <!-- ВСТАВИТЬ: папка «Говорящая голова» на Google Диске закрыта — открыть доступ по ссылке, затем подставить ролики -->
+        <div class="genre">
+          <div class="genre-head"><span class="tcode">02</span><h3>Говорящая голова</h3></div>
+          <ul class="work-grid">
+            <li><div class="work-card"><span class="poster slate"></span><span class="work-title todo">[ВСТАВИТЬ: название ролика 1]</span></div></li>
+            <li><div class="work-card"><span class="poster slate"></span><span class="work-title todo">[ВСТАВИТЬ: название ролика 2]</span></div></li>
+            <li><div class="work-card"><span class="poster slate"></span><span class="work-title todo">[ВСТАВИТЬ: название ролика 3]</span></div></li>
+            <li><div class="work-card"><span class="poster slate"></span><span class="work-title todo">[ВСТАВИТЬ: название ролика 4]</span></div></li>
+          </ul>
+        </div>
+
+        <!-- ВСТАВИТЬ: папка «Реклама» на Google Диске закрыта — открыть доступ по ссылке, затем подставить ролики -->
+        <div class="genre">
+          <div class="genre-head"><span class="tcode">03</span><h3>Реклама</h3></div>
+          <ul class="work-grid">
+            <li><div class="work-card"><span class="poster slate"></span><span class="work-title todo">[ВСТАВИТЬ: название ролика 1]</span></div></li>
+            <li><div class="work-card"><span class="poster slate"></span><span class="work-title todo">[ВСТАВИТЬ: название ролика 2]</span></div></li>
+            <li><div class="work-card"><span class="poster slate"></span><span class="work-title todo">[ВСТАВИТЬ: название ролика 3]</span></div></li>
+            <li><div class="work-card"><span class="poster slate"></span><span class="work-title todo">[ВСТАВИТЬ: название ролика 4]</span></div></li>
+          </ul>
+        </div>
+      </div>
       </div>
       <a class="btn" href="#contact">Хочу такой же ролик</a>
     </div>
@@ -315,5 +307,12 @@
   <span>© 2026 Виталий Горлов</span>
   <span>Видеомонтажёр, видеорежиссёр, AI-креатор</span>
 </footer>
+<!-- плеер работ: открывается поверх страницы на весь экран -->
+<div class="player" id="player" role="dialog" aria-modal="true" aria-label="Просмотр ролика" hidden>
+  <button class="player-close" type="button" aria-label="Закрыть ролик">✕</button>
+  <iframe class="player-frame" title="Ролик" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+
 <script src="assets/space.js"></script>
 <script src="assets/reel.js"></script>
+<script src="assets/works.js"></script>
