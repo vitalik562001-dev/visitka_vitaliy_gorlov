@@ -94,11 +94,11 @@
               <span class="poster"><img src="img/works/klip.jpg" width="1280" height="728" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
               <span class="work-title">loftstyle</span>
             </a></li>
-            <li><a class="work-card" href="https://drive.google.com/file/d/1nf9jjs5_l9QTrW7HsHtimvvZK0R64iUC/view" target="_blank" rel="noopener" data-video="1nf9jjs5_l9QTrW7HsHtimvvZK0R64iUC">
+            <li><a class="work-card" href="works/video/lyubov.mp4" target="_blank" rel="noopener" data-src="works/video/lyubov.mp4">
               <span class="poster"><img src="img/works/lyubov.jpg" width="1280" height="643" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
               <span class="work-title">Любовь</span>
             </a></li>
-            <li><a class="work-card" href="https://drive.google.com/file/d/17d8kGHKAQvmHJF8dDem9sUw5lsAt0lu0/view" target="_blank" rel="noopener" data-video="17d8kGHKAQvmHJF8dDem9sUw5lsAt0lu0">
+            <li><a class="work-card" href="works/video/rossiya.mp4" target="_blank" rel="noopener" data-src="works/video/rossiya.mp4">
               <span class="poster"><img src="img/works/rossiya.jpg" width="1280" height="659" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
               <span class="work-title">Наша страна — Россия</span>
             </a></li>
@@ -109,7 +109,7 @@
         <div class="genre">
           <div class="genre-head"><span class="tcode">02</span><h3>Говорящая голова</h3></div>
           <ul class="work-grid two">
-            <li><a class="work-card" href="https://drive.google.com/file/d/1MEmlrL6AIVGZOi-iQqKVupnRqS7IEevb/view" target="_blank" rel="noopener" data-video="1MEmlrL6AIVGZOi-iQqKVupnRqS7IEevb">
+            <li><a class="work-card" href="works/video/head-davinci.mp4" target="_blank" rel="noopener" data-src="works/video/head-davinci.mp4">
               <span class="poster"><img src="img/works/head-davinci.jpg" width="726" height="469" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
               <span class="work-title">YouTube-контент: DaVinci Resolve — программа для профессионального монтажа</span>
             </a></li>
@@ -121,18 +121,20 @@
         </div>
 
         <!-- ролики из папки «портфолио/РЕКЛАМА»; обложки владельца из папки «обложки видео/реклама».
-             ВСТАВИТЬ: папка на Google Диске закрыта — заменить href на ссылку файла и добавить data-video="id файла" -->
+             ВСТАВИТЬ: «МОЙ СПОРТ» весит 113 МБ, GitHub не принимает файлы больше 100 МБ — нужна сжатая версия в works/video/ad-sport.mp4 -->
+        <!-- data-src — файл в works/video: по клику играет сразу на весь экран -->
         <div class="genre">
           <div class="genre-head"><span class="tcode">03</span><h3>Реклама</h3></div>
           <ul class="work-grid two">
-            <li><a class="work-card" href="https://drive.google.com/drive/folders/14MqPuNC-ixkHZ_YE1L7bSqBe7jm0q1jN" target="_blank" rel="noopener">
+            <li><a class="work-card" href="works/video/ad-fan.mp4" target="_blank" rel="noopener" data-src="works/video/ad-fan.mp4">
               <span class="poster"><img src="img/works/ad-fan.jpg" width="776" height="433" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
               <span class="work-title">Рекламный ролик вентилятор</span>
             </a></li>
-            <li><a class="work-card" href="https://drive.google.com/drive/folders/14MqPuNC-ixkHZ_YE1L7bSqBe7jm0q1jN" target="_blank" rel="noopener">
-              <span class="poster"><img src="img/works/ad-sport.jpg" width="631" height="405" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+            <!-- ВСТАВИТЬ: когда появится works/video/ad-sport.mp4 — сделать карточку ссылкой с data-src, как у вентилятора -->
+            <li><div class="work-card">
+              <span class="poster"><img src="img/works/ad-sport.jpg" width="631" height="405" alt="" loading="lazy"></span>
               <span class="work-title">Рекламный ролик МОЙ СПОРТ</span>
-            </a></li>
+            </div></li>
           </ul>
         </div>
       </div>
@@ -320,6 +322,7 @@
 <!-- плеер работ: открывается поверх страницы на весь экран -->
 <div class="player" id="player" role="dialog" aria-modal="true" aria-label="Просмотр ролика" hidden>
   <button class="player-close" type="button" aria-label="Закрыть ролик">✕</button>
+  <video class="player-video" controls playsinline preload="none" hidden></video>
   <iframe class="player-frame" title="Ролик" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </div>
 
