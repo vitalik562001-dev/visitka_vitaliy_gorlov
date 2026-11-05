@@ -368,54 +368,14 @@
 </footer>
 
 <!-- Анкета заявки. Открывается кнопкой «Заказать видео» (любая ссылка с data-order).
-     Отправка — через Web3Forms на почту владельца (assets/order.js). -->
+     Сама анкета — Яндекс Форма во встроенном окне; ответы приходят владельцу на почту.
+     Ссылка на форму задаётся в assets/order.js (FORM_URL). -->
 <dialog class="order" id="order" aria-labelledby="order-title">
   <button class="order-close" type="button" aria-label="Закрыть анкету">✕</button>
   <div class="order-body">
     <h2 id="order-title">Давайте познакомимся</h2>
-    <form class="order-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
-      <p class="order-note">Обязательно: имя и Telegram или VK, чтобы я мог вам ответить.</p>
-
-      <div class="field">
-        <label for="f-name">1. Как вас зовут?</label>
-        <input id="f-name" name="Имя" type="text" autocomplete="name" maxlength="80" required aria-describedby="e-name">
-        <span class="field-err" id="e-name"></span>
-      </div>
-      <div class="field">
-        <label for="f-tg">2. Ссылка на Telegram</label>
-        <input id="f-tg" name="Telegram" type="text" inputmode="url" autocomplete="off" maxlength="100" placeholder="@ваш_ник или t.me/ваш_ник" aria-describedby="e-contact">
-      </div>
-      <div class="field">
-        <label for="f-vk">3. Ссылка на ваш профиль VK</label>
-        <input id="f-vk" name="VK" type="text" inputmode="url" autocomplete="off" maxlength="150" placeholder="vk.com/ваш_профиль" aria-describedby="e-contact">
-        <span class="field-err" id="e-contact"></span>
-      </div>
-      <div class="field">
-        <label for="f-idea">4. Напишите кратко о своей идее</label>
-        <textarea id="f-idea" name="Идея" rows="4" maxlength="1500" placeholder="Какой ролик нужен, для чего, к какому сроку"></textarea>
-      </div>
-
-      <div class="field check">
-        <input id="f-agree" type="checkbox" required aria-describedby="e-agree">
-        <label for="f-agree">Я согласен(на) на обработку моих персональных данных в соответствии с <a href="politika.html" target="_blank" rel="noopener">Политикой обработки персональных данных</a></label>
-        <span class="field-err" id="e-agree"></span>
-      </div>
-
-      <!-- служебные поля Web3Forms: ключ формы (письма приходят на vitali050601@yandex.ru), тема письма;
-           botcheck — ловушка для спам-ботов, люди её не видят -->
-      <input type="hidden" name="access_key" value="d2538245-e579-46df-8de7-cf68a802e467">
-      <input type="hidden" name="subject" value="Новая заявка с сайта">
-      <input type="hidden" name="from_name" value="Сайт Виталия Горлова">
-      <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-      <button class="btn btn-red order-send" type="submit">Отправить анкету</button>
-      <p class="order-status" role="status" aria-live="polite"></p>
-    </form>
-    <div class="order-done" hidden>
-      <p class="order-done-title">Анкета отправлена!</p>
-      <p>Спасибо. Я прочитаю её и напишу вам в течение дня.</p>
-      <button class="btn order-ok" type="button">Хорошо</button>
-    </div>
+    <div class="order-frame"></div>
+    <p class="order-alt">Если анкета не открылась, напишите мне в Telegram: <a href="https://t.me/Vitaliy_Gorlov_Creator" target="_blank" rel="noopener">@Vitaliy_Gorlov_Creator</a></p>
   </div>
 </dialog>
 <!-- плеер работ: открывается поверх страницы на весь экран -->
