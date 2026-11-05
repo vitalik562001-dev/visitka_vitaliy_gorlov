@@ -368,12 +368,12 @@
 </footer>
 
 <!-- Анкета заявки. Открывается кнопкой «Заказать видео» (любая ссылка с data-order).
-     Отправка — через FormSubmit на почту владельца (assets/order.js). -->
+     Отправка — через Web3Forms на почту владельца (assets/order.js). -->
 <dialog class="order" id="order" aria-labelledby="order-title">
   <button class="order-close" type="button" aria-label="Закрыть анкету">✕</button>
   <div class="order-body">
     <h2 id="order-title">Давайте познакомимся</h2>
-    <form class="order-form" action="https://formsubmit.co/vitali050601@yandex.ru" method="POST" novalidate>
+    <form class="order-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
       <p class="order-note">Обязательно: имя и Telegram или VK, чтобы я мог вам ответить.</p>
 
       <div class="field">
@@ -401,11 +401,12 @@
         <span class="field-err" id="e-agree"></span>
       </div>
 
-      <!-- служебные поля FormSubmit; _honey — ловушка для спам-ботов, люди её не видят -->
-      <input type="hidden" name="_subject" value="Новая заявка с сайта">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <!-- служебные поля Web3Forms: ключ формы (письма приходят на vitali050601@yandex.ru), тема письма;
+           botcheck — ловушка для спам-ботов, люди её не видят -->
+      <input type="hidden" name="access_key" value="d2538245-e579-46df-8de7-cf68a802e467">
+      <input type="hidden" name="subject" value="Новая заявка с сайта">
+      <input type="hidden" name="from_name" value="Сайт Виталия Горлова">
+      <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
 
       <button class="btn btn-red order-send" type="submit">Отправить анкету</button>
       <p class="order-status" role="status" aria-live="polite"></p>

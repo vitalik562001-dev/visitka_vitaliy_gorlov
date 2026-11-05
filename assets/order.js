@@ -1,11 +1,10 @@
 // Анкета заявки: окно открывается по кнопке с data-order, поля проверяются на странице,
-// анкета уходит на почту владельца через FormSubmit (https://formsubmit.co).
-// ВАЖНО: первая отправка пришлёт на почту письмо «Activate Form» — по кнопке в нём форму нужно подтвердить один раз.
+// анкета уходит на почту владельца через Web3Forms (https://web3forms.com); ключ формы — в поле access_key в index.html.
 (function () {
   var dialog = document.getElementById("order");
   if (!dialog || typeof dialog.showModal !== "function") return; // старый браузер: кнопка ведёт к контактам
 
-  var ENDPOINT = "https://formsubmit.co/ajax/vitali050601@yandex.ru";
+  var ENDPOINT = "https://api.web3forms.com/submit";
 
   var form = dialog.querySelector(".order-form");
   var done = dialog.querySelector(".order-done");
@@ -75,7 +74,7 @@
 
     var data = {};
     new FormData(form).forEach(function (value, key) { data[key] = typeof value === "string" ? value.trim() : value; });
-    if (data._honey) return; // заполнил бот
+    if (data.botcheck) return; // отметил бот
 
     send.disabled = true;
     send.textContent = "Отправляю…";
@@ -86,7 +85,7 @@
     })
       .then(function (r) { return r.json().catch(function () { return {}; }); })
       .then(function (res) {
-        if (String(res.success) !== "true") throw new Error(res.message || "FormSubmit error");
+        if (String(res.success) !== "true") throw new Error(res.message || "Web3Forms error");
         form.reset();
         form.hidden = true;
         done.hidden = false;
