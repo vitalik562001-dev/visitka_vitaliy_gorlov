@@ -154,7 +154,7 @@
 
     <!-- Услуги в виде монтажной ленты, как в Premiere Pro: дорожки сверху вниз, клипы слева направо.
          Лента всегда тёмная, как окно программы. На узком экране она листается вбок внутри рамки. -->
-    <div class="editor">
+    <div class="editor" data-seconds="24">
       <div class="editor-bar"><span>Ваш проект</span><span class="editor-tc">00:00:24:00</span></div>
       <div class="tl-scroll" tabindex="0" role="region" aria-label="Услуги на монтажной ленте">
         <div class="tl">
@@ -293,18 +293,38 @@
 <section id="process">
   <div class="wrap">
     <div class="sec-head">
-      <span class="label">Маркеры на таймлайне</span>
+      <span class="label">Как мы работаем</span>
       <h2>Как идёт работа</h2>
-      <p>Шесть этапов, от брифа до мастер‑файла. На каждом вы видите результат и вносите правки.</p>
+      <p>Шесть шагов от вашего сообщения до готового ролика. На каждом шаге вы видите, что получается, и можете попросить поправить.</p>
     </div>
-    <ol class="process">
-      <li><span class="tcode">00:00:00:00 · IN</span><h3>Бриф</h3><p>Обсуждаем задачу, референсы, хронометраж и сроки.</p></li>
-      <li><span class="tcode">00:00:05:00</span><h3>Сборка</h3><p>Отсматриваю исходники, отбираю лучшие дубли, генерирую недостающее.</p></li>
-      <li><span class="tcode">00:00:10:00</span><h3>Черновой монтаж</h3><p>Структура и ритм. Первая версия на согласование.</p></li>
-      <li><span class="tcode">00:00:15:00</span><h3>Чистовой монтаж</h3><p>Точные склейки, графика, титры, ИИ‑кадры на своих местах.</p></li>
-      <li><span class="tcode">00:00:20:00</span><h3>Цвет и звук</h3><p>Грейдинг, сведение, финальная полировка.</p></li>
-      <li><span class="tcode">00:00:25:00 · OUT</span><h3>Мастер</h3><p>Отдаю файлы во всех нужных форматах и ресайзах.</p></li>
-    </ol>
+
+    <!-- Шаги работы как клипы на одной дорожке монтажной ленты; маркеры на линейке — номера шагов.
+         Указатель едет при прокрутке, шаг под ним подсвечивается (assets/timeline.js, data-steps). -->
+    <div class="editor" data-seconds="30" data-steps>
+      <div class="editor-bar"><span>Работа над роликом</span><span class="editor-tc">00:00:00:00</span></div>
+      <div class="tl-scroll" tabindex="0" role="region" aria-label="Шаги работы на монтажной ленте">
+        <div class="tl">
+          <div class="tl-corner" aria-hidden="true"></div>
+          <div class="tl-ruler" aria-hidden="true">
+            <span style="--at:0">00:00:00:00</span><span style="--at:.1667">00:00:05:00</span><span style="--at:.3333">00:00:10:00</span><span style="--at:.5">00:00:15:00</span><span style="--at:.6667">00:00:20:00</span><span style="--at:.8333">00:00:25:00</span>
+            <i class="tl-marker" style="--at:0">1</i><i class="tl-marker" style="--at:.1667">2</i><i class="tl-marker" style="--at:.3333">3</i><i class="tl-marker" style="--at:.5">4</i><i class="tl-marker" style="--at:.6667">5</i><i class="tl-marker" style="--at:.8333">6</i>
+          </div>
+
+          <div class="tl-head"><b>V1</b><span>Ваш ролик</span></div>
+          <ol class="tl-lane">
+            <li class="tl-clip" style="grid-column:1/3"><h3>1. Знакомимся</h3><p>Вы рассказываете, какое видео нужно, и присылаете примеры, которые нравятся. Договариваемся о длине ролика и сроках.</p></li>
+            <li class="tl-clip" style="grid-column:3/5"><h3>2. Собираю материал</h3><p>Пересматриваю всё, что вы прислали, и выбираю лучшие кадры. Если чего-то не хватает, создаю с помощью нейросети.</p></li>
+            <li class="tl-clip" style="grid-column:5/7"><h3>3. Первая версия</h3><p>Собираю ролик целиком, чтобы было видно, как он идёт. Отправляю вам посмотреть.</p></li>
+            <li class="tl-clip" style="grid-column:7/9"><h3>4. Доработка</h3><p>Исправляю то, что вы отметили. Добавляю надписи, субтитры и графику.</p></li>
+            <li class="tl-clip" style="grid-column:9/11"><h3>5. Цвет и звук</h3><p>Выравниваю цвет и чищу звук, чтобы ролик выглядел и звучал аккуратно.</p></li>
+            <li class="tl-clip" style="grid-column:11/13"><h3>6. Готовый ролик</h3><p>Отправляю готовые файлы. Если нужно, делаю версии для разных соцсетей.</p></li>
+          </ol>
+
+          <div class="tl-playzone" aria-hidden="true"><div class="playhead"></div></div>
+        </div>
+      </div>
+    </div>
+    <p class="tl-hint">Листайте ленту вправо →</p>
   </div>
 </section>
 
