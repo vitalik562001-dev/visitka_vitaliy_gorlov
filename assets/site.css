@@ -485,8 +485,7 @@ ol.tl-lane { list-style: none; margin: 0; }
 .social-txt { display: grid; gap: 2px; min-width: 0; }
 .social-txt b { font-weight: 600; font-size: 1.05rem; }
 .social-txt span { font-size: var(--s-5); color: var(--muted); overflow-wrap: anywhere; }
-.form-todo { padding: 24px; border: 1px dashed var(--line); border-radius: 4px; display: grid; gap: 8px; }
-.form-todo p { margin: 0; }
+.contact-photo { display: block; width: 100%; height: auto; border-radius: 6px; }
 
 footer {
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px;
