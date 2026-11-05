@@ -487,6 +487,70 @@ ol.tl-lane { list-style: none; margin: 0; }
 .social-txt span { font-size: var(--s-5); color: var(--muted); overflow-wrap: anywhere; }
 .contact-photo { display: block; width: 100%; height: auto; border-radius: 6px; }
 
+/* ——— Кнопка «Заказать видео» и анкета ——— */
+/* красный — только для главного действия (заказ); белый текст на нём контрастный в обеих темах */
+:root { --red: #d1202a; --red-hover: #b3161f; --red-text: #b3161f; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --red-text: #ff8a8f; } }
+:root[data-theme="dark"] { --red-text: #ff8a8f; }
+
+.btn-red { background: var(--red); color: #fff; }
+.btn-red:hover { background: var(--red-hover); box-shadow: 0 10px 30px -10px var(--red); }
+.hero-cta {
+  position: absolute; left: 0; right: 0; top: calc(100svh - 168px);
+  width: fit-content; margin-inline: auto;
+  padding: 18px 36px; font-size: 1.15rem;
+  box-shadow: 0 12px 34px -12px rgba(0, 0, 0, 0.55);
+}
+html.order-open { overflow: hidden; }
+.order {
+  width: min(560px, calc(100vw - 24px)); max-height: calc(100dvh - 24px);
+  padding: 0; border: 0; border-radius: 8px;
+  background: var(--bg); color: var(--ink);
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6), inset 0 0 0 1px var(--panel-line);
+  overflow: auto; overscroll-behavior: contain;
+}
+.order::backdrop { background: rgba(4, 5, 10, 0.62); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.order-body { padding: clamp(20px, 5vw, 40px); padding-top: 8px; }
+.order h2 { font-size: clamp(1.4rem, 5vw, 1.9rem); text-align: center; margin: 0 0 20px; }
+.order-close {
+  display: grid; place-items: center;
+  margin: 8px 8px 0 auto;
+  width: 44px; height: 44px; border: 0; border-radius: 4px;
+  background: var(--cell); color: var(--ink); font-size: 1.1rem; cursor: pointer;
+}
+.order-close:hover { background: var(--line); }
+.order-form { display: grid; gap: 16px; }
+.order-form[hidden], .order-done[hidden] { display: none; }
+.order-note { margin: 0; font-size: var(--s-5); color: var(--muted); text-align: center; }
+.field { display: grid; gap: 6px; }
+.field label { font-weight: 500; }
+.field input[type="text"], .field textarea {
+  width: 100%; padding: 12px 14px;
+  font: inherit; color: var(--ink);
+  background: var(--cell);
+  border: 1px solid var(--line); border-radius: 4px;
+}
+.field textarea { resize: vertical; min-height: 104px; }
+.field input::placeholder, .field textarea::placeholder { color: var(--muted); opacity: 0.8; }
+.field input:focus-visible, .field textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.field [aria-invalid="true"] { border-color: var(--red); }
+.field-err { color: var(--red-text); font-size: var(--s-5); }
+.field-err:empty { display: none; }
+.field.check { grid-template-columns: auto 1fr; align-items: start; column-gap: 10px; }
+.field.check input { width: 20px; height: 20px; margin: 3px 0 0; accent-color: var(--red); }
+.field.check input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.field.check label { font-weight: 400; font-size: var(--s-5); color: var(--muted); }
+.field.check .field-err { grid-column: 1 / -1; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.order-send { width: 100%; margin-top: 4px; border: 0; font-family: inherit; cursor: pointer; }
+.order-send:disabled { opacity: 0.7; cursor: progress; transform: none; }
+.order-status { margin: 0; color: var(--red-text); font-size: var(--s-5); }
+.order-status:empty { display: none; }
+.order-done { text-align: center; display: grid; gap: 8px; justify-items: center; padding-block: 12px 8px; }
+.order-done p { margin: 0; }
+.order-done-title { font-family: var(--f-display); font-weight: 600; font-size: 1.3rem; }
+.order-ok { margin-top: 12px; border: 0; font-family: inherit; cursor: pointer; }
+
 footer {
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px;
   padding-block: 28px 40px;
@@ -521,8 +585,10 @@ footer {
 /* узкий или вертикальный экран: баннер показан целиком сверху (его высота — половина ширины окна),
    разделы начинаются сразу под ним. Стоит после основных правил .hero, иначе они его перебивают. */
 @media (max-aspect-ratio: 3/2) {
-  .hero { height: calc(var(--head-h) + 50vw + 8px); }
   .cue { display: none; }
+  /* кнопка «Заказать видео» не закрывает баннер: стоит сразу под ним */
+  .hero { height: auto; padding: calc(var(--head-h) + 50vw + 16px) 0 8px; display: flex; justify-content: center; }
+  .hero-cta { position: static; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
