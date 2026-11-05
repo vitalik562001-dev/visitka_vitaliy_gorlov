@@ -462,16 +462,30 @@ ol.tl-lane { list-style: none; margin: 0; }
 /* контакты */
 .contact h2 { font-size: clamp(1.9rem, 5.5vw, 3.8rem); line-height: 1.05; }
 .contact .sec-head p { font-size: var(--s-3); }
-.links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.links > * {
-  display: grid; gap: 4px;
-  padding: 18px 20px;
+/* слева соцсети, справа форма */
+.contact-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(20px, 4vw, 48px); align-items: start; }
+.socials { display: grid; gap: 10px; }
+.social {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 18px 14px 14px;
   background: var(--cell);
   box-shadow: inset 0 0 0 1px var(--line);
   border-radius: 4px;
+  color: var(--ink); text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
 }
-.links b { font-weight: 500; font-size: 1.05rem; overflow-wrap: anywhere; }
-.form-todo { padding: 24px; border: 1px dashed var(--line); border-radius: 4px; display: grid; gap: 8px; max-width: 62ch; }
+.social:hover { box-shadow: inset 0 0 0 1px var(--accent); transform: translateX(4px); }
+.social-ico {
+  flex: none; width: 48px; height: 48px;
+  display: grid; place-items: center;
+  background: var(--accent); color: var(--on-accent);
+  border-radius: 4px;
+}
+.social-ico svg { width: 26px; height: 26px; }
+.social-txt { display: grid; gap: 2px; min-width: 0; }
+.social-txt b { font-weight: 600; font-size: 1.05rem; }
+.social-txt span { font-size: var(--s-5); color: var(--muted); overflow-wrap: anywhere; }
+.form-todo { padding: 24px; border: 1px dashed var(--line); border-radius: 4px; display: grid; gap: 8px; }
 .form-todo p { margin: 0; }
 
 footer {
@@ -484,7 +498,7 @@ footer {
   .about { grid-template-columns: 1fr; }
   .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tl-hint { display: block; }
-  .links { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
   :root { --head-h: 96px; }
@@ -516,5 +530,5 @@ footer {
   .space-img { transform: none; }
   .space-floor { background-position: 50% 0; }
   .cue { animation: none; }
-  .btn, .play, .poster img { transition: none; }
+  .btn, .play, .poster img, .social { transition: none; }
 }
